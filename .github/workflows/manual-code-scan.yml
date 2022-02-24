@@ -69,7 +69,7 @@ jobs:
       uses: peter-murray/github-security-report-action@v2
       with:
         # GitHub Access Token with permissions for Dependencies and Security API access on the repository.
-        token: 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
+        token: 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
         # The CodeQL output directory for SARIF report(s).
         sarifReportDir: ../results
         # The output directory for the generated report(s).
