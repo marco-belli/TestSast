@@ -1,0 +1,17 @@
+name: CodeQL Security Scan Report
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      LANGUAGE: javascript
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run CodeQL scan
+        uses: themenu/codeql-security-report@master
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+           ${{ env.CODEQL_MD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
