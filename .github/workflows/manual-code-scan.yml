@@ -68,7 +68,7 @@ jobs:
     - name: Generate Security Report
       uses: peter-murray/github-security-report-action@v2
       with:
-          token: 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
+          token: ${{ secrets.SECURITY_TOKEN }}
           repository: ${{ github.repository }}
           sarifReportDir: ../results
           outputDir: ${{ github.workspace }}
